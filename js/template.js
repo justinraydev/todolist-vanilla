@@ -35,6 +35,7 @@
 		+		'<div class="view">'
 		+			'<input class="toggle" type="checkbox" {{checked}}>'
 		+			'<label>{{title}}</label>'
+		+			'<label class="category">{{category}}</label>'
 		+			'<button class="destroy"></button>'
 		+		'</div>'
 		+	'</li>';
@@ -74,6 +75,7 @@
 			template = template.replace('{{id}}', data[i].id);
 			template = template.replace('{{title}}', escape(data[i].title));
 			template = template.replace('{{completed}}', completed);
+			template = template.replace('{{category}}',  escape(data[i].category));
 			template = template.replace('{{checked}}', checked);
 
 			view = view + template;

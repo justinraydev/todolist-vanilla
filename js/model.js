@@ -17,12 +17,14 @@
 	 * @param {string} [title] The title of the task
 	 * @param {function} [callback] The callback to fire after the model is created
 	 */
-	Model.prototype.create = function (title, callback) {
+	Model.prototype.create = function (title, category, callback) {
 		title = title || '';
+		category = category || '';
 		callback = callback || function () {};
 
 		var newItem = {
 			title: title.trim(),
+			category: category.trim(),
 			completed: false
 		};
 

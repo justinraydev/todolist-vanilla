@@ -5,12 +5,16 @@
 		<title>VanillaJS • TodoMVC</title>
 		<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
 		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<section class="todoapp">
 			<header class="header">
 				<h1>todos</h1>
-				<input class="new-todo" placeholder="What needs to be done?" autofocus>
+				<div class="inputs">
+					<input class="new-todo" placeholder="What needs to be done?" autofocus>
+					<input id="new-category" class="new-category" placeholder="category" autofocus>
+				</div>
 			</header>
 			<section class="main">
 				<input id="toggle-all" class="toggle-all" type="checkbox">

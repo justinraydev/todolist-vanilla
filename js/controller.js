@@ -13,8 +13,10 @@
 		self.model = model;
 		self.view = view;
 
-		self.view.bind('newTodo', function (title) {
-			self.addItem(title);
+		self.view.bind('newTodo', function (title, category) {
+			console.trace('newTodo');
+			console.log('newTodo!!!!', title, category);
+			self.addItem(title, category);
 		});
 
 		self.view.bind('itemEdit', function (item) {
@@ -92,14 +94,17 @@
 	 * An event to fire whenever you want to add an item. Simply pass in the event
 	 * object and it'll handle the DOM insertion and saving of the new item.
 	 */
-	Controller.prototype.addItem = function (title) {
+	Controller.prototype.addItem = function (title, category) {
 		var self = this;
 
 		if (title.trim() === '') {
 			return;
 		}
+		if (category.trim() === '') {
+			return;
+		}
 
-		self.model.create(title, function () {
+		self.model.create(title, category, function () {
 			self.view.render('clearNewTodo');
 			self._filter(true);
 		});

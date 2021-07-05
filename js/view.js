@@ -25,6 +25,7 @@
 		this.$footer = qs('.footer');
 		this.$toggleAll = qs('.toggle-all');
 		this.$newTodo = qs('.new-todo');
+		this.$newCategory = qs('.new-category');
 	}
 
 	View.prototype._removeItem = function (id) {
@@ -174,9 +175,20 @@
 		var self = this;
 		if (event === 'newTodo') {
 			$on(self.$newTodo, 'change', function () {
-				handler(self.$newTodo.value);
+				if (!self.$newCategory.value) {
+					self.$newCategory.focus();
+					return;
+				}
+				handler(self.$newTodo.value, self.$newCategory.value);
 			});
-
+		// } else if (event === 'newCategory') {
+		// 	$on(self.$newCategory, 'change', function () {
+		// 		if (!self.$newTodo.value) {
+		// 			self.$newTodo.focus();
+		// 			return;
+		// 		}
+		// 		handler(self.$newTodo.value, self.$newCategory.value);
+		// 	});
 		} else if (event === 'removeCompleted') {
 			$on(self.$clearCompleted, 'click', function () {
 				handler();

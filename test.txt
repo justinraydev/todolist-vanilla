@@ -1,0 +1,35 @@
+1. ToDo List Categories
+Vanilla JavaScript Test
+ 
+
+Goal
+ 
+
+Extend functionality of existing ToDo List application with ability to categorize tasks.
+
+ 
+Description
+ 
+
+As a user I would like to categorize tasks when creating them. Since every user have their own preferences, categories should be dynamically created.
+
+ 
+Acceptance criteria
+ 
+
+Next to What needs to be done? field should be text input field Category
+When blur event is happening on What needs to be done? task should not be created
+Task creation should happen only when both input fields are fulfilled
+In the list of existing tasks categories should be shown as labels
+Every task can belong to one category only
+When task is being created and input text in Category field matches already existing category it should be reused.
+Deleting the last task within category should delete category also.
+ 
+Evaluation criteria
+ 
+
+Code should be maintainable and testable
+Application architecture should not be affected in a bad way
+Task is a work in progress, valuable feedback will earn you additional points
+Git Instructions
+Use the following commands to work with this project
